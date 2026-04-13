@@ -83,7 +83,7 @@ export default function Home() {
                 <div>
                   <p className="eyebrow">JAYWU CARD PROFILE</p>
                   <h1 className="mt-3 font-serif-display text-4xl tracking-[0.08em] text-[var(--ink-strong)] md:text-6xl">
-                    JAYWU
+                    吳杰恩
                   </h1>
                   <div className="mt-4 flex flex-wrap items-center gap-3 text-sm text-[var(--ink-soft)] md:text-base">
                     <span className="inline-flex items-center gap-2 rounded-full border border-[rgba(87,104,100,0.18)] bg-white/60 px-3 py-1.5">
@@ -102,9 +102,7 @@ export default function Home() {
                     Personal Brand First
                   </p>
                   <p className="mt-2 text-sm leading-6 text-[var(--ink-soft)]">
-                    穩重可靠的住宅建設
-                    <br />
-                    與工程管理形象入口
+                    住宅建設與工程管理形象入口
                   </p>
                 </div>
               </div>
@@ -241,7 +239,7 @@ export default function Home() {
                   </p>
                   <div className="mt-4 space-y-4 text-sm leading-7 text-white/82 md:text-base">
                     <p>
-                      個人識別：<span className="text-white">JAYWU｜土木技師</span>
+                      個人識別：<span className="text-white">吳杰恩｜土木技師</span>
                     </p>
                     <p>
                       專業焦點：<span className="text-white">住宅建設規劃與工程管理</span>
