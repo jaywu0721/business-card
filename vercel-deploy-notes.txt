@@ -5,3 +5,4 @@ Vercel 部署排查紀錄
 3. 目前外部 curl 存取自訂網域會先看到 Vercel Authentication 頁面，表示生產環境仍受保護。
 4. 瀏覽器在已授權狀態下開啟自訂網域，頁面內容顯示 server/index.ts 原始碼而不是入口頁，代表 Vercel 目前抓到錯誤的輸出內容。
 5. 本地建置結果顯示實際靜態網站位於 dist/public/index.html，因此 Vercel 需要明確設定 outputDirectory 為 dist/public，否則會抓錯根目錄。
+6. 修正後重新部署生產環境，但目前重新驗證時，自訂網域在已授權瀏覽器中仍顯示 server/index.ts 原始碼；未授權的外部請求仍先被導向 Vercel Authentication。
