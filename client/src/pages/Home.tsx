@@ -48,7 +48,7 @@ export default function Home() {
                     公司入口
                   </h1>
                   <p className="mt-4 max-w-2xl text-base leading-8 text-[var(--ink-soft)] md:text-lg">
-                    掃描名片 QR Code 後，可直接進入兩個公開網站入口。此頁面僅保留必要導流，不提供個人資訊與其他額外內容。
+                    掃描名片 QR Code 後，可直接進入兩個公開網站入口。
                   </p>
                 </div>
 
@@ -57,7 +57,7 @@ export default function Home() {
                     Open Access
                   </p>
                   <p className="mt-2 text-sm leading-6 text-[var(--ink-soft)]">
-                    無需登入即可直接前往官網
+                    點選連結即可直接前往官網
                   </p>
                 </div>
               </div>
@@ -68,7 +68,7 @@ export default function Home() {
                     <div>
                       <p className="section-kicker">網站入口</p>
                       <p className="mt-3 max-w-xl text-sm leading-7 text-[var(--ink-soft)] md:text-base">
-                        使用者掃碼後只需做一個決定：前往鷁欣建設或鷁崎建設。這個方向比較對，因為把個人資料留在入口頁只會稀釋導流目的。
+                        前往鷁欣建設或鷁崎建設。
                       </p>
                     </div>
                     <div className="hidden rounded-full border border-[rgba(87,104,100,0.16)] bg-white/75 px-3 py-2 text-xs uppercase tracking-[0.18em] text-[var(--ink-muted)] md:block">
@@ -155,7 +155,7 @@ export default function Home() {
                               Access
                             </p>
                             <p className="mt-2 text-base leading-7 text-[var(--ink-strong)]">
-                              頁面定位為公開入口頁，不應要求訪客登入後才能查看內容。
+                              頁面為公開入口頁
                             </p>
                           </div>
                         </div>
@@ -168,7 +168,7 @@ export default function Home() {
                       <div>
                         <p className="section-kicker text-white/70">入口頁原則</p>
                         <p className="mt-3 text-lg leading-8 text-white md:text-xl">
-                          單一掃碼、雙入口導流；少即是多，避免在入口頁承載與導流無關的資訊。
+                          單一掃碼、雙入口導流
                         </p>
                       </div>
                       <div className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm tracking-[0.12em] text-white/90 backdrop-blur-sm">
@@ -216,9 +216,6 @@ export default function Home() {
                   </p>
                   <p>
                     保留內容：<span className="text-white">鷁欣建設、鷁崎建設兩個網站入口</span>
-                  </p>
-                  <p>
-                    移除內容：<span className="text-white">個人聯絡資料、個人介紹與其他非必要資訊</span>
                   </p>
                 </div>
               </div>
