@@ -1,0 +1,5 @@
+server/
+shared/
+.manus-logs/
+vercel-deploy-notes.txt
+*.md
