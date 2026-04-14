@@ -1,64 +1,25 @@
 /*
 Design philosophy for this file:
-- Contemporary corporate minimalism for a residential construction professional.
-- Left-heavy composition with structured information hierarchy and clear action paths.
-- Use restrained gray-green and bronze cues, architectural spacing, and low-amplitude motion.
-- Every section must reinforce trust, precision, and personal-brand-first positioning.
+- Architectural dual-portal minimalism focused on two clear company entry points.
+- Asymmetric composition, restrained gray-green and bronze accents, and low-noise hierarchy.
+- No personal profile content; every section must reinforce direct public access and fast scan-to-site flow.
+- Interaction should feel precise, calm, and corporate rather than promotional.
 */
 import { motion } from "framer-motion";
-import {
-  ArrowUpRight,
-  Building2,
-  Mail,
-  MapPin,
-  Phone,
-  QrCode,
-  ShieldCheck,
-  UserRound,
-} from "lucide-react";
+import { ArrowUpRight, Building2, QrCode, ShieldCheck } from "lucide-react";
 
-const companies = [
+const portals = [
   {
+    id: "01",
     name: "鷁欣建設",
-    role: "官方網站入口",
-    href: "https://yisin-web.vercel.app/",
+    description: "前往鷁欣建設官方網站入口",
+    href: "https://yisin.eaglebuilt.company/",
   },
   {
+    id: "02",
     name: "鷁崎建設",
-    role: "官方網站入口",
-    href: "https://yiqi-web.vercel.app/",
-  },
-  {
-    name: "啟合營造",
-    role: "事業體資訊呈現",
-    href: "mailto:jaywu0721jay@gmail.com?subject=%E5%95%9F%E5%90%88%E7%87%9F%E9%80%A0%E8%81%AF%E7%B5%A1%E6%B4%BD%E8%A9%A2",
-  },
-];
-
-const contacts = [
-  {
-    icon: Phone,
-    label: "手機",
-    value: "0928-136-023",
-    href: "tel:0928136023",
-  },
-  {
-    icon: Mail,
-    label: "Email",
-    value: "jaywu0721jay@gmail.com",
-    href: "mailto:jaywu0721jay@gmail.com",
-  },
-  {
-    icon: UserRound,
-    label: "LINE ID",
-    value: "jay0928136023",
-    href: "https://line.me/ti/p/~jay0928136023",
-  },
-  {
-    icon: MapPin,
-    label: "地址",
-    value: "300 新竹市香山區延平路二段 567 號",
-    href: "https://maps.google.com/?q=300%E6%96%B0%E7%AB%B9%E5%B8%82%E9%A6%99%E5%B1%B1%E5%8D%80%E5%BB%B6%E5%B9%B3%E8%B7%AF%E4%BA%8C%E6%AE%B5567%E8%99%9F",
+    description: "前往鷁崎建設官方網站入口",
+    href: "https://yiqi.eaglebuilt.company/",
   },
 ];
 
@@ -71,7 +32,7 @@ export default function Home() {
         <div className="pointer-events-none absolute inset-y-0 left-[8%] hidden w-px bg-[linear-gradient(to_bottom,transparent,rgba(87,104,100,0.55),transparent)] lg:block" />
 
         <div className="container relative z-10 flex min-h-screen items-center py-10 lg:py-16">
-          <div className="grid w-full gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
+          <div className="grid w-full gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:gap-12">
             <motion.section
               initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -79,129 +40,140 @@ export default function Home() {
               className="relative overflow-hidden rounded-[2rem] border border-white/45 bg-white/58 p-6 shadow-[0_30px_90px_rgba(55,64,61,0.16)] backdrop-blur-xl md:p-8 lg:p-10"
             >
               <div className="absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,rgba(108,89,71,0)_0%,rgba(108,89,71,0.85)_45%,rgba(86,104,99,0.95)_100%)]" />
+
               <div className="mb-8 flex items-start justify-between gap-5 border-b border-[rgba(87,104,100,0.16)] pb-6">
                 <div>
-                  <p className="eyebrow">JAYWU CARD PROFILE</p>
+                  <p className="eyebrow">PUBLIC COMPANY PORTAL</p>
                   <h1 className="mt-3 font-serif-display text-4xl tracking-[0.08em] text-[var(--ink-strong)] md:text-6xl">
-                    吳杰恩
+                    公司入口
                   </h1>
-                  <div className="mt-4 flex flex-wrap items-center gap-3 text-sm text-[var(--ink-soft)] md:text-base">
-                    <span className="inline-flex items-center gap-2 rounded-full border border-[rgba(87,104,100,0.18)] bg-white/60 px-3 py-1.5">
-                      <ShieldCheck className="h-4 w-4 text-[var(--brand-bronze)]" />
-                      土木技師
-                    </span>
-                    <span className="inline-flex items-center gap-2 rounded-full border border-[rgba(87,104,100,0.18)] bg-white/60 px-3 py-1.5">
-                      <Building2 className="h-4 w-4 text-[var(--brand-green)]" />
-                      住宅建設
-                    </span>
-                  </div>
+                  <p className="mt-4 max-w-2xl text-base leading-8 text-[var(--ink-soft)] md:text-lg">
+                    掃描名片 QR Code 後，可直接進入兩個公開網站入口。此頁面僅保留必要導流，不提供個人資訊與其他額外內容。
+                  </p>
                 </div>
 
                 <div className="hidden rounded-[1.35rem] border border-white/70 bg-white/65 px-4 py-4 text-right shadow-[0_15px_40px_rgba(55,64,61,0.08)] md:block">
                   <p className="text-[0.7rem] uppercase tracking-[0.28em] text-[var(--ink-muted)]">
-                    Personal Brand First
+                    Open Access
                   </p>
                   <p className="mt-2 text-sm leading-6 text-[var(--ink-soft)]">
-                    住宅建設與工程管理形象入口
+                    無需登入即可直接前往官網
                   </p>
                 </div>
               </div>
 
-              <div className="grid gap-8 xl:grid-cols-[0.95fr_1.05fr]">
-                <div className="space-y-6">
-                  <div>
-                    <p className="section-kicker">專業定位</p>
-                    <p className="mt-3 max-w-xl text-base leading-8 text-[var(--ink-soft)] md:text-lg">
-                      以個人專業作為名片對外識別核心，整合鷁欣建設、鷁崎建設與啟合營造之事業資訊，將聯絡動線、公司入口與住宅建設定位集中在單一頁面中。
-                    </p>
+              <div className="grid gap-6 xl:grid-cols-[1.05fr_0.95fr]">
+                <div className="rounded-[1.6rem] border border-[rgba(87,104,100,0.16)] bg-[rgba(247,245,240,0.86)] p-5 md:p-6">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <p className="section-kicker">網站入口</p>
+                      <p className="mt-3 max-w-xl text-sm leading-7 text-[var(--ink-soft)] md:text-base">
+                        使用者掃碼後只需做一個決定：前往鷁欣建設或鷁崎建設。這個方向比較對，因為把個人資料留在入口頁只會稀釋導流目的。
+                      </p>
+                    </div>
+                    <div className="hidden rounded-full border border-[rgba(87,104,100,0.16)] bg-white/75 px-3 py-2 text-xs uppercase tracking-[0.18em] text-[var(--ink-muted)] md:block">
+                      2 portals
+                    </div>
                   </div>
 
-                  <div className="rounded-[1.6rem] border border-[rgba(87,104,100,0.16)] bg-[rgba(247,245,240,0.86)] p-5 md:p-6">
-                    <p className="section-kicker">聯絡資訊</p>
-                    <div className="mt-5 space-y-3">
-                      {contacts.map(({ icon: Icon, label, value, href }) => (
-                        <a
-                          key={label}
-                          href={href}
-                          target={href.startsWith("http") ? "_blank" : undefined}
-                          rel={href.startsWith("http") ? "noreferrer" : undefined}
-                          className="group flex items-start gap-4 rounded-2xl border border-transparent bg-white/80 px-4 py-4 transition duration-300 hover:border-[rgba(87,104,100,0.18)] hover:bg-white"
-                        >
-                          <span className="mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[rgba(86,104,99,0.10)] text-[var(--brand-green)] transition duration-300 group-hover:bg-[rgba(108,89,71,0.14)] group-hover:text-[var(--brand-bronze)]">
-                            <Icon className="h-4 w-4" />
+                  <div className="mt-5 space-y-4">
+                    {portals.map((portal, index) => (
+                      <motion.a
+                        key={portal.name}
+                        href={portal.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        initial={{ opacity: 0, y: 16 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.08 * index + 0.16, duration: 0.45 }}
+                        className="group block rounded-[1.5rem] border border-[rgba(87,104,100,0.14)] bg-white/88 p-5 transition duration-300 hover:-translate-y-0.5 hover:border-[rgba(108,89,71,0.24)] hover:shadow-[0_20px_40px_rgba(55,64,61,0.10)]"
+                      >
+                        <div className="flex items-start justify-between gap-4">
+                          <div>
+                            <p className="text-xs uppercase tracking-[0.22em] text-[var(--ink-muted)]">
+                              {portal.id}
+                            </p>
+                            <h2 className="mt-2 text-2xl font-semibold tracking-[0.04em] text-[var(--ink-strong)] md:text-3xl">
+                              {portal.name}
+                            </h2>
+                            <p className="mt-3 text-sm leading-7 text-[var(--ink-soft)] md:text-base">
+                              {portal.description}
+                            </p>
+                          </div>
+                          <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[rgba(87,104,100,0.14)] bg-[rgba(86,104,99,0.08)] text-[var(--brand-green)] transition duration-300 group-hover:border-[rgba(108,89,71,0.22)] group-hover:bg-[rgba(108,89,71,0.10)] group-hover:text-[var(--brand-bronze)]">
+                            <ArrowUpRight className="h-5 w-5" />
                           </span>
-                          <span className="min-w-0">
-                            <span className="block text-xs uppercase tracking-[0.22em] text-[var(--ink-muted)]">
-                              {label}
-                            </span>
-                            <span className="mt-1 block break-all text-sm leading-6 text-[var(--ink-strong)] md:text-base">
-                              {value}
-                            </span>
-                          </span>
-                        </a>
-                      ))}
-                    </div>
+                        </div>
+                      </motion.a>
+                    ))}
                   </div>
                 </div>
 
-                <div className="flex flex-col justify-between gap-6">
+                <div className="flex flex-col gap-6">
                   <div className="rounded-[1.6rem] border border-[rgba(87,104,100,0.16)] bg-[rgba(252,250,246,0.85)] p-5 md:p-6">
-                    <div className="flex items-center justify-between gap-3">
-                      <div>
-                        <p className="section-kicker">事業體入口</p>
-                        <p className="mt-3 max-w-md text-sm leading-7 text-[var(--ink-soft)] md:text-base">
-                          兩個網站入口對應名片 QR Code 掃描後的主要導流方向；啟合營造則保留為同體系資訊揭露。
-                        </p>
-                      </div>
-                      <div className="hidden rounded-full border border-[rgba(87,104,100,0.16)] bg-white/75 px-3 py-2 text-xs uppercase tracking-[0.18em] text-[var(--ink-muted)] md:block">
-                        3 entities
-                      </div>
-                    </div>
-
+                    <p className="section-kicker">使用方式</p>
                     <div className="mt-5 space-y-4">
-                      {companies.map((company, index) => (
-                        <motion.a
-                          key={company.name}
-                          href={company.href}
-                          target="_blank"
-                          rel="noreferrer"
-                          initial={{ opacity: 0, y: 16 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: 0.08 * index + 0.18, duration: 0.45 }}
-                          className="group block rounded-[1.5rem] border border-[rgba(87,104,100,0.14)] bg-white/86 p-5 transition duration-300 hover:-translate-y-0.5 hover:border-[rgba(108,89,71,0.24)] hover:shadow-[0_20px_40px_rgba(55,64,61,0.10)]"
-                        >
-                          <div className="flex items-start justify-between gap-4">
-                            <div>
-                              <p className="text-xs uppercase tracking-[0.22em] text-[var(--ink-muted)]">
-                                0{index + 1}
-                              </p>
-                              <h2 className="mt-2 text-xl font-semibold tracking-[0.04em] text-[var(--ink-strong)] md:text-2xl">
-                                {company.name}
-                              </h2>
-                              <p className="mt-3 text-sm leading-7 text-[var(--ink-soft)] md:text-base">
-                                {company.role}
-                              </p>
-                            </div>
-                            <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[rgba(87,104,100,0.14)] bg-[rgba(86,104,99,0.08)] text-[var(--brand-green)] transition duration-300 group-hover:border-[rgba(108,89,71,0.22)] group-hover:bg-[rgba(108,89,71,0.10)] group-hover:text-[var(--brand-bronze)]">
-                              <ArrowUpRight className="h-5 w-5" />
-                            </span>
+                      <div className="rounded-[1.35rem] border border-[rgba(87,104,100,0.12)] bg-white/85 p-4">
+                        <div className="flex items-start gap-3">
+                          <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[rgba(86,104,99,0.10)] text-[var(--brand-green)]">
+                            <QrCode className="h-4 w-4" />
+                          </span>
+                          <div>
+                            <p className="text-sm uppercase tracking-[0.22em] text-[var(--ink-muted)]">
+                              Step 1
+                            </p>
+                            <p className="mt-2 text-base leading-7 text-[var(--ink-strong)]">
+                              掃描名片上的 QR Code 進入本頁。
+                            </p>
                           </div>
-                        </motion.a>
-                      ))}
+                        </div>
+                      </div>
+
+                      <div className="rounded-[1.35rem] border border-[rgba(87,104,100,0.12)] bg-white/85 p-4">
+                        <div className="flex items-start gap-3">
+                          <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[rgba(108,89,71,0.12)] text-[var(--brand-bronze)]">
+                            <Building2 className="h-4 w-4" />
+                          </span>
+                          <div>
+                            <p className="text-sm uppercase tracking-[0.22em] text-[var(--ink-muted)]">
+                              Step 2
+                            </p>
+                            <p className="mt-2 text-base leading-7 text-[var(--ink-strong)]">
+                              點選所需公司入口，直接前往對應網站。
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="rounded-[1.35rem] border border-[rgba(87,104,100,0.12)] bg-white/85 p-4">
+                        <div className="flex items-start gap-3">
+                          <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[rgba(86,104,99,0.10)] text-[var(--brand-green)]">
+                            <ShieldCheck className="h-4 w-4" />
+                          </span>
+                          <div>
+                            <p className="text-sm uppercase tracking-[0.22em] text-[var(--ink-muted)]">
+                              Access
+                            </p>
+                            <p className="mt-2 text-base leading-7 text-[var(--ink-strong)]">
+                              頁面定位為公開入口頁，不應要求訪客登入後才能查看內容。
+                            </p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
                   <div className="info-band rounded-[1.6rem] p-5 md:p-6">
                     <div className="flex flex-wrap items-center justify-between gap-4">
                       <div>
-                        <p className="section-kicker text-white/70">QR Code 用途</p>
+                        <p className="section-kicker text-white/70">入口頁原則</p>
                         <p className="mt-3 text-lg leading-8 text-white md:text-xl">
-                          這個頁面是名片上的唯一 QR 導流入口，避免同時放兩個 QR Code 造成視覺擁擠與掃描猶豫。
+                          單一掃碼、雙入口導流；少即是多，避免在入口頁承載與導流無關的資訊。
                         </p>
                       </div>
                       <div className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm tracking-[0.12em] text-white/90 backdrop-blur-sm">
                         <QrCode className="h-4 w-4" />
-                        single scan flow
+                        public scan flow
                       </div>
                     </div>
                   </div>
@@ -217,47 +189,48 @@ export default function Home() {
             >
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.18),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))]" />
               <div className="absolute -right-14 bottom-10 h-44 w-44 rounded-full bg-[rgba(108,89,71,0.24)] blur-3xl" />
-              <div className="relative z-10">
-                <div className="rounded-[1.5rem] border border-white/12 bg-white/8 p-4">
-                  <img
-                    src="https://d2xsxph8kpxj0f.cloudfront.net/310519663069716470/bCLDffkW86NBM8xdqEG3Rz/logo_1d92de0c.png"
-                    alt="公司識別標誌"
-                    className="h-16 w-auto object-contain"
-                  />
-                  <div className="mt-6 overflow-hidden rounded-[1.35rem] border border-white/10">
-                    <img
-                      src="https://d2xsxph8kpxj0f.cloudfront.net/310519663069716470/bCLDffkW86NBM8xdqEG3Rz/jaywu-hero-01-HSsAnjZCDwbW9BAbEvBZAj.webp"
-                      alt="住宅建設形象視覺"
-                      className="h-56 w-full object-cover"
-                    />
-                  </div>
-                </div>
 
-                <div className="mt-6 rounded-[1.5rem] border border-white/10 bg-white/6 p-5">
-                  <p className="text-xs uppercase tracking-[0.24em] text-white/55">
-                    名片文案主軸
+              <div className="relative z-10 rounded-[1.5rem] border border-white/12 bg-white/8 p-4">
+                <img
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663069716470/bCLDffkW86NBM8xdqEG3Rz/logo_1d92de0c.png"
+                  alt="公司識別標誌"
+                  className="h-16 w-auto object-contain"
+                />
+
+                <div className="mt-6 overflow-hidden rounded-[1.35rem] border border-white/10">
+                  <img
+                    src="https://d2xsxph8kpxj0f.cloudfront.net/310519663069716470/bCLDffkW86NBM8xdqEG3Rz/jaywu-hero-01-HSsAnjZCDwbW9BAbEvBZAj.webp"
+                    alt="建築外觀形象視覺"
+                    className="h-64 w-full object-cover"
+                  />
+                </div>
+              </div>
+
+              <div className="relative z-10 mt-6 rounded-[1.5rem] border border-white/10 bg-white/6 p-5">
+                <p className="text-xs uppercase tracking-[0.24em] text-white/55">
+                  Public Routing
+                </p>
+                <div className="mt-4 space-y-4 text-sm leading-7 text-white/82 md:text-base">
+                  <p>
+                    本頁用途：<span className="text-white">作為名片 QR Code 的公開導流頁</span>
                   </p>
-                  <div className="mt-4 space-y-4 text-sm leading-7 text-white/82 md:text-base">
-                    <p>
-                      個人識別：<span className="text-white">吳杰恩｜土木技師</span>
-                    </p>
-                    <p>
-                      專業焦點：<span className="text-white">住宅建設規劃與工程管理</span>
-                    </p>
-                    <p>
-                      關聯公司：<span className="text-white">鷁欣建設、鷁崎建設、啟合營造</span>
-                    </p>
-                  </div>
+                  <p>
+                    保留內容：<span className="text-white">鷁欣建設、鷁崎建設兩個網站入口</span>
+                  </p>
+                  <p>
+                    移除內容：<span className="text-white">個人聯絡資料、個人介紹與其他非必要資訊</span>
+                  </p>
                 </div>
               </div>
 
               <div className="relative z-10 mt-8 border-t border-white/12 pt-6 text-sm leading-7 text-white/72">
                 <p className="text-xs uppercase tracking-[0.24em] text-white/48">
-                  Address
+                  Portal URLs
                 </p>
-                <p className="mt-3 max-w-sm text-base text-white/86">
-                  300 新竹市香山區延平路二段 567 號
-                </p>
+                <div className="mt-3 space-y-3 text-base text-white/86">
+                  <p>鷁欣建設｜https://yisin.eaglebuilt.company/</p>
+                  <p>鷁崎建設｜https://yiqi.eaglebuilt.company/</p>
+                </div>
               </div>
             </motion.aside>
           </div>

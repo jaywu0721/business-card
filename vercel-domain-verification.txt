@@ -1,0 +1,11 @@
+驗證時間：2026-04-14
+
+已確認自訂子網域 https://jaywu.eaglebuilt.company/ 可正常開啟，頁面標題為「JAYWU 名片入口頁」，且畫面內容已顯示正確的入口頁版面，不再是先前錯誤的原始碼頁面。
+
+修正關鍵：重新將 jaywu.eaglebuilt.company 別名指向最新正確部署 jaywu-card-linkhub-25xv0p71f-jaywu0721s-projects.vercel.app。
+
+目前狀態：
+- GitHub 倉庫已連接並已推送最新修正
+- Vercel 正式網址可正常回傳入口頁 HTML
+- 自訂網域已可正常顯示入口頁
+- 下一步應改用 https://jaywu.eaglebuilt.company/ 重建 QR Code，並更新名片送印檔
